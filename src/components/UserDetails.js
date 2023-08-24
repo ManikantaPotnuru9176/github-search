@@ -145,6 +145,7 @@ const UserDetails = ({ openModal, setOpenModal }) => {
                     <Stack key={dropDown} spacing={0} align="center">
                       <Text fontWeight={600}>{data.length}</Text>
                       <Select
+                        color={"gray.500"}
                         target="_blank"
                         variant="unstyled"
                         placeholder={dropDown}
@@ -175,7 +176,7 @@ const UserDetails = ({ openModal, setOpenModal }) => {
               href={`https://github.com/${user.login}`}
               target="_blank"
               flex={1}
-              m={"10"}
+              mb={"10"}
               fontSize={"sm"}
               rounded={"full"}
               bg={"blue.600"}
