@@ -33,6 +33,7 @@ const Search = ({ openModal, setOpenModal }) => {
       setUsers(response.data.items);
     } catch (error) {
       setError(true);
+      setState("error");
       console.log(error);
     }
   };
@@ -99,11 +100,11 @@ const Search = ({ openModal, setOpenModal }) => {
           </FormControl>
         </Stack>
         <Text
-          mt={2}
+          mt={{ base: "10" }}
           textAlign={"center"}
           color={error ? "red.500" : "gray.500"}
         >
-          {error && "Oh no an error occured! 😢 Please try again later."}
+          {error && "Oh no an error occurred! 😢 Please try again later."}
         </Text>
       </Container>
       <Wrap
