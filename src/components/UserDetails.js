@@ -93,12 +93,12 @@ const UserDetails = ({ openModal, setOpenModal }) => {
   ];
 
   return (
-    <Modal isOpen={true} onClose={onClose}>
+    <Modal isOpen={true} onClose={onClose} isCentered={true}>
       <ModalOverlay
         bg="none"
         backdropFilter="auto"
         backdropInvert="10%"
-        backdropBlur="4px"
+        backdropBlur="2px"
       />
       <ModalContent>
         <ModalHeader>{user?.title}</ModalHeader>

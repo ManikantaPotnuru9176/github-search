@@ -16,18 +16,6 @@ import axios from "../../axiosConfig.js";
 import UserCard from "@/cards/UserCard.js";
 import ToggleColorMode from "./ToggleColorMode.js";
 
-// const data = {
-//   avatar_url: "https://avatars.githubusercontent.com/u/97650?v=4",
-//   id: 97650,
-//   login: "mani",
-//   type: "User",
-//   followers_url: "https://api.github.com/users/mani/followers",
-//   following_url: "https://api.github.com/users/mani/following",
-//   html_url: "https://github.com/mani",
-//   repos_url: "https://api.github.com/users/mani/repos",
-//   url: "https://api.github.com/users/mani",
-// };
-
 const Search = ({ openModal, setOpenModal }) => {
   const [query, setQuery] = useState("");
   const [state, setState] = useState("initial");
@@ -53,13 +41,14 @@ const Search = ({ openModal, setOpenModal }) => {
     <Flex
       minH={"100vh"}
       direction={"column"}
+      mx={{ base: "1", md: "0" }}
       bg={useColorModeValue("gray.50", "gray.800")}
     >
       <ToggleColorMode />
       <Container
-        mt={10}
+        mt={{ base: "60px", md: "10" }}
         maxW={"xl"}
-        h={"140px"}
+        h={{ base: "186px", md: "140px" }}
         bg={useColorModeValue("white", "whiteAlpha.100")}
         boxShadow={"xl"}
         rounded={"lg"}
@@ -117,7 +106,11 @@ const Search = ({ openModal, setOpenModal }) => {
           {error && "Oh no an error occured! 😢 Please try again later."}
         </Text>
       </Container>
-      <Wrap spacing="10" mt={"10"} justify={"center"}>
+      <Wrap
+        spacing={{ base: "0", md: "10" }}
+        mt={{ base: "10px", md: "10" }}
+        justify={"center"}
+      >
         {users.map((user) => (
           <WrapItem key={user.id}>
             <UserCard
